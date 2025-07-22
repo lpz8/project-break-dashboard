@@ -1,0 +1,15 @@
+body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
+#reloj { font-size: 2em; }
+#resultado { font-size: 1.5em; margin-top: 10px; }
+#lista { list-style: none; padding: 0; }
+#lista li { margin: 5px 0; }
+#clima { margin-top: 20px; }
+ul { list-style: none; padding: 0; }
+ul li { margin: 10px 0; }
+ul li a { text-decoration: none; color: #007BFF; }
+ul li a:hover { color: #0056b3; }
+body {
+    background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+    background-repeat: no-repeat; /* Evita que se repita la imagen */
+    color: white; /* Texto blanco para que se vea sobre el fondo */
+}
