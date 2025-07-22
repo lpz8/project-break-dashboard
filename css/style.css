@@ -11,5 +11,5 @@ ul li a:hover { color: #0056b3; }
 body {
     background-size: cover; /* Hace que la imagen cubra toda la pantalla */
     background-repeat: no-repeat; /* Evita que se repita la imagen */
-    color: white; /* Texto blanco para que se vea sobre el fondo */
+    color: rgb(8, 8, 8); /* Texto blanco para que se vea sobre el fondo */
 }
