@@ -17,5 +17,8 @@ function generarContrasena() {
     }
 
     contrasena = contrasena.split('').sort(() => Math.random() - 0.5).join('');
-    document.getElementById('resultado').textContent = contrasena;
+    const resultado = document.getElementById('resultado');
+    resultado.textContent = contrasena;
+    resultado.classList.add('generated');
+    setTimeout(() => resultado.classList.remove('generated'), 1000);
 }

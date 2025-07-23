@@ -4,15 +4,13 @@ function actualizarReloj() {
     let minutos = ahora.getMinutes();
     let segundos = ahora.getSeconds();
     let dia = ahora.getDate();
-    let mes = ahora.getMonth() + 1; // +1 porque enero es 0
+    let mes = ahora.getMonth() + 1;
     let año = ahora.getFullYear();
 
-    // Formateo con ceros a la izquierda
     horas = horas < 10 ? '0' + horas : horas;
     minutos = minutos < 10 ? '0' + minutos : minutos;
     segundos = segundos < 10 ? '0' + segundos : segundos;
 
-    // Frases según la hora
     let frase = '';
     if (horas >= 0 && horas < 7) frase = 'Es hora de descansar. Apaga y sigue mañana';
     else if (horas >= 7 && horas < 12) frase = 'Buenos días, desayuna fuerte y a darle al código';
@@ -25,5 +23,18 @@ function actualizarReloj() {
     document.getElementById('reloj').innerHTML = `${horas}:${minutos}:${segundos} ${dia}/${mes}/${año} - ${frase}`;
 }
 
-setInterval(actualizarReloj, 1000); // Actualiza cada segundo
-actualizarReloj(); // Llama inicial
+function actualizarRelojAnalogo() {
+    const ahora = new Date();
+    const horas = ahora.getHours() % 12;
+    const minutos = ahora.getMinutes();
+    const segundos = ahora.getSeconds();
+
+    document.querySelector('.hora').style.transform = `rotate(${(horas * 30 + minutos / 2)}deg)`;
+    document.querySelector('.minuto').style.transform = `rotate(${(minutos * 6)}deg)`;
+    document.querySelector('.segundo').style.transform = `rotate(${(segundos * 6)}deg)`;
+}
+
+setInterval(actualizarReloj, 1000);
+setInterval(actualizarRelojAnalogo, 1000);
+actualizarReloj();
+actualizarRelojAnalogo();

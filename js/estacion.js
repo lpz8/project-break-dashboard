@@ -1,5 +1,5 @@
-const API_KEY = '79b300adb99d4164911193526252107'; // Reemplaza con tu API KEY
-const ciudad = 'Madrid'; // Cambia por tu ciudad
+const API_KEY = '79b300adb99d4164911193526252107'; // Instrucción adicional: Reemplaza 'TU_API_KEY' con tu clave de WeatherAPI
+const ciudad = 'Madrid'; // Instrucción adicional: Cambia 'Madrid' por tu ciudad
 
 function cargarClima() {
     fetch(`http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${ciudad}&days=1&aqi=no`)

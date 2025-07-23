@@ -3,7 +3,7 @@ function anadirLink() {
     const enlace = document.getElementById('enlace').value;
     if (titulo && enlace) {
         const li = document.createElement('li');
-        li.innerHTML = `<a href="${enlace}" target="_blank">${titulo}</a> <button onclick="this.parentElement.remove()">Eliminar</button>`;
+        li.innerHTML = `<a href="${enlace}" target="_blank">${titulo}</a> <button onclick="this.parentElement.remove(); localStorage.removeItem('${titulo}')">Eliminar</button>`;
         document.getElementById('lista').appendChild(li);
         localStorage.setItem(titulo, enlace);
         document.getElementById('titulo').value = '';
@@ -11,7 +11,6 @@ function anadirLink() {
     }
 }
 
-// Cargar links al iniciar
 window.onload = () => {
     for (let i = 0; i < localStorage.length; i++) {
         const titulo = localStorage.key(i);

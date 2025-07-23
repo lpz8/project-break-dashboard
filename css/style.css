@@ -1,15 +1,200 @@
-body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
-#reloj { font-size: 2em; }
-#resultado { font-size: 1.5em; margin-top: 10px; }
-#lista { list-style: none; padding: 0; }
-#lista li { margin: 5px 0; }
-#clima { margin-top: 20px; }
-ul { list-style: none; padding: 0; }
-ul li { margin: 10px 0; }
-ul li a { text-decoration: none; color: #007BFF; }
-ul li a:hover { color: #0056b3; }
 body {
-    background-size: cover; /* Hace que la imagen cubra toda la pantalla */
-    background-repeat: no-repeat; /* Evita que se repita la imagen */
-    color: rgb(8, 8, 8); /* Texto blanco para que se vea sobre el fondo */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-size: 110% auto; 
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1s ease;
+}
+
+
+@keyframes movingShadow {
+    0% { text-shadow: 2px 2px 10px #ff4500, -2px -2px 10px #00ff00; }
+    50% { text-shadow: 3px 3px 15px #ff00ff, -3px -3px 15px #00ffff; }
+    100% { text-shadow: 2px 2px 10px #ffff00, -2px -2px 10px #ff00ff; }
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+    padding: 20px;
+    animation: movingShadow 5s infinite;
+    color: #ffeb3b;
+    text-transform: uppercase;
+    display: none; 
+}
+
+#project-break-text {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.8em; 
+    animation: movingShadow 5s infinite; 
+    color: #ffeb3b; 
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+ul li a {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: #ff4500; 
+    font-family: 'MedievalSharp', cursive; 
+    transition: color 0.3s;
+}
+
+ul li a:hover {
+    color: #ff5722; 
+    animation: movingShadow 2s infinite;
+}
+
+
+#reloj {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 20px;
+    animation: movingShadow 4s infinite;
+    color: #e91e63;
+}
+
+#reloj-analogo {
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    position: relative;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#reloj-analogo .manecilla {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    background: #fff;
+    transform: rotate(0deg);
+}
+
+#reloj-analogo .hora {
+    width: 4px;
+    height: 60px;
+}
+
+#reloj-analogo .minuto {
+    width: 2px;
+    height: 80px;
+}
+
+#reloj-analogo .segundo {
+    width: 1px;
+    height: 90px;
+    background: #ff0000;
+}
+
+
+#longitud, button {
+    display: block;
+    margin: 10px auto;
+    font-size: 1.2em;
+    padding: 5px;
+}
+
+#resultado {
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 10px;
+    color: #ff4500; 
+    font-family: 'MedievalSharp', cursive; 
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+button:hover {
+    background-color: #ff9800;
+    color: #fff;
+    animation: movingShadow 1.5s infinite;
+}
+
+
+#resultado.generated {
+    animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-20px); }
+    60% { transform: translateY(-10px); }
+}
+
+
+#lista {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+#lista li {
+    margin: 5px 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+#lista li a {
+    color: #ffeb3b;
+    text-decoration: none;
+}
+
+#lista li button {
+    margin-left: 10px;
+    background: #f44336;
+    color: #fff;
+    border: none;
+    padding: 5px;
+}
+
+
+#clima {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1.3em;
+    color: #ff9800;
+    text-shadow: 2px 2px 5px #000;
+}
+
+button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #2196f3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1976d2;
 }
